@@ -5,7 +5,7 @@
 <div class="text-center">
     <a class="d-flex justify-content-center align-items-center"
         style="width:150px; height:200px; background-color:lightsteelblue; font-size:100px; text-decoration:none; color:black;"
-        asp-action="CreateDocument"
+        asp-action="Index" asp-controller="CreateDocument"
     >
         +
     </a>
@@ -23,10 +23,11 @@
             <div class="d-flex justify-content-center align-items-center"
                 style="width: 150px; height: 200px; background-color:lightblue; font-size: 100px;"
             >
-                <a style="text-decoration: none; color: black;" asp-action="EditDocument" asp-route-id="@item.Id">
+                <a style="text-decoration: none; color: black;" asp-action="Index" asp-controller="EditDocument" asp-route-id="@item.Id">
                     📝
                 </a>
             </div>
+            <span style="font-weight: bold">@item.Title</span>
         </div>
     }
 

@@ -8,10 +8,10 @@ namespace pocTextEditor.Models
         [Key]
         public int Id { get; set; }
 
-        [Required(ErrorMessage = "Write the title!")]
+        [Required(ErrorMessage = "Escreva o título!")]
         public string Title { get; set; } = string.Empty;
 
-        [Required(ErrorMessage = "Write the content!")]
+        [Required(ErrorMessage = "Escreva o conteúdo!")]
         public string Content { get; set; } = string.Empty;
 
         public DateTime CreatedAt { get; set; } = DateTime.Now;

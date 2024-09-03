@@ -1,0 +1,21 @@
+﻿@model Document
+
+<h2 class="text-center">
+    Editor de Texto
+</h2>
+<div class="col-md-12">
+    <form asp-action="Edit" asp-controller="EditDocument" method="post">
+        <div asp-validation-summary="All" class="text-danger"></div>
+        <input asp-for="Id" type="hidden"/>
+        <div class="form-group mb-3">
+            <input asp-for="Title" class="form-control" />
+        </div>
+        <p>Criação: @Model.CreatedAt.ToString("dd/MM/yyyy HH:mm") - Última alteração: @Model.UpdatedAt.ToString("dd/MM/yyyy HH:mm")</p>
+        <div class="form-group mb-3">
+            <textarea id="tiny" asp-for="Content" style="width:68vw; height: 60vh;"></textarea>
+        </div>
+        <input type="submit" class="btn btn-primary w-100" value="Editar" />
+        <a asp-action="Delete" asp-controller="DeleteDocument" asp-route-id="@Model.Id" class="btn btn-danger mt-3 w-100">Deletar</a>
+        <a asp-action="Index" asp-controller="Home" class="btn btn-info mt-3 w-100">Voltar</a>
+    </form>
+</div>

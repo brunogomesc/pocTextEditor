@@ -24,6 +24,13 @@ namespace pocTextEditor.Controllers
             return View(documents);
 
         }
+        
+        public IActionResult CreateDocument()
+        {
+
+            return View();
+
+        }
 
     }
 }
