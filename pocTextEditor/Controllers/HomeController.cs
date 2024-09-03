@@ -1,4 +1,6 @@
 using Microsoft.AspNetCore.Mvc;
+using Microsoft.EntityFrameworkCore;
+using pocTextEditor.Data;
 using pocTextEditor.Models;
 using System.Diagnostics;
 
@@ -6,10 +8,21 @@ namespace pocTextEditor.Controllers
 {
     public class HomeController : Controller
     {
-        
-        public IActionResult Index()
+
+        private readonly AppDbContext _context;
+
+        public HomeController(AppDbContext context)
         {
-            return View();
+            _context = context;
+        }
+
+        public async Task<IActionResult> Index()
+        {
+
+            var documents = await _context.Documents.ToListAsync();
+
+            return View(documents);
+
         }
 
     }
